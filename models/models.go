@@ -2,10 +2,11 @@ package models
 
 import (
 	"log"
-	"gorm.io/gorm"
+
 	"github.com/golang-migrate/migrate/v4"
-	_ "github.com/golang-migrate/migrate/v4/database/postgres"
-	_ "github.com/golang-migrate/migrate/v4/source/file"
+	_ "github.com/golang-migrate/migrate/v4/database/postgres" // used by golang-migrate
+	_ "github.com/golang-migrate/migrate/v4/source/file"       // used by golang-migrate
+	"gorm.io/gorm"
 )
 
 var db *gorm.DB

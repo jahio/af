@@ -17,10 +17,6 @@ func main() {
 	}
 
 	models.Init(db)
-
-	// Reset the DB - debugging
-	models.ResetDBTest()
-
 	router := api.Init(db)
 
 	server := &http.Server{
