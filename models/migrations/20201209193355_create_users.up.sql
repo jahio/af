@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS users (
+	id BIGSERIAL PRIMARY KEY,
+	email TEXT NOT NULL UNIQUE,
+	password_hash TEXT NOT NULL,
+	created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT(NOW() AT TIME ZONE 'UTC'),
+	updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT(NOW() AT TIME ZONE 'UTC')
+);
+
+CREATE INDEX IF NOT EXISTS idx_users_created_at ON users(created_at);
+CREATE INDEX IF NOT EXISTS idx_users_updated_at ON users(updated_at);
